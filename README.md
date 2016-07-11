@@ -37,6 +37,6 @@ Add this to your '~/.homebridge/config.json' as an accessory:
     *  "anonymously" this is ignored.
 
 ## Notes
-##### Currently this works only with Firebase < 3.0.0 
+##### Currently this works only with Firebase libraries < 3.0.0 
 See [this conversation](https://groups.google.com/forum/#!searchin/firebase-talk/Firebase$203$20Auth$20as$20a$20Client$20on$20NodeJS/firebase-talk/_6Rhro3zBbk/3sTvmPKwGgAJ) in the Firebase Google Groups. For Firebase >= 3.0.0 in NodeJS only custom token authentication is supported. However, the 2.4.1 libraries for NodeJS work well with Firebase 3.x.
 
