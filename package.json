@@ -23,5 +23,8 @@
   "homepage": "https://github.com/mlaanderson/homebridge-fireswitch#readme",
   "dependencies": {
     "firebase": "^2.4.1"
+  },
+  "engines": {
+    "homebridge": ">=0.2.0"
   }
 }

@@ -22,7 +22,7 @@ class fireSwitch {
         this._state = false;
         
         this._db = new Firebase(this.server);
-        this._db_path = this._db.child(path);
+        this._db_path = this._db.child(this.path);
         this._db.onAuth(function(authData) {
             if (authData) {
                 // parse the path
