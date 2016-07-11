@@ -5,10 +5,10 @@ module.exports = function(homebridge) {
     Service = homebridge.hap.Service;
     Characteristic = homebridge.hap.Characteristic;
     
-    homebridge.registerAccessory("homebridge-firebaseswitch", "FireSwitch", firebaseSwitch);
+    homebridge.registerAccessory("homebridge-fireswitch", "FireSwitch", fireSwitch);
 };
 
-class firebaseSwitch {
+class fireSwitch {
     constructor(log, config) {
         var self = this;
         this.log = log;
