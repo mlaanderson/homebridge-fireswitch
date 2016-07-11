@@ -45,6 +45,11 @@ Variables in the path are set in curly braces like:
 Variables are expanded after authorization is complete.
 ##### Supported Variables
 * {$uid} - The result of firebase_database.getAuth().uid
+
+## Tutorial
+The project [wiki](https://github.com/mlaanderson/homebridge-fireswitch/wiki/) has
+a [simple tutorial](https://github.com/mlaanderson/homebridge-fireswitch/wiki/Tutorial)
+that demonstrates how to create and control a widget with this project.
     
 ## Notes
 ##### Currently this works only with Firebase libraries < 3.0.0 
