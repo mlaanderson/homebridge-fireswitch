@@ -1,3 +1,4 @@
+const path_RE = /\{\$[^${]+\}/g;
 var Service, Characteristic;
 var Firebase = require('firebase');
 
@@ -22,11 +23,23 @@ class fireSwitch {
         this._state = false;
         
         this._db = new Firebase(this.server);
-        this._db_path = this._db.child(this.path);
+        
+        if (path_RE.test(this.path) == false) {
+            // path doesn't need to get UID or other
+            // vars to expand
+            this._db_path = this._db.child(this.path);
+        }
+        
         this._db.onAuth(function(authData) {
             if (authData) {
                 // parse the path
-                self.path = self.path.replace("{uid}", self._db.getAuth().uid);
+                self.path = self.path.replace("{$uid}", self._db.getAuth().uid);
+                
+                // have to set the path here since it required
+                // variable expansion after authentication
+                if (path_RE.test(this.path) == true) {
+                    self._db_path = self._db.child(self.path);
+                }
             } else {
                 // try to authorize
                 self._authorize();
@@ -103,7 +116,7 @@ class fireSwitch {
         var switchService = new Service.Switch(this.name);
         
         switchService
-            .getCharacteristic(Characteristic.Off)
+            .getCharacteristic(Characteristic.On)
             .on('set', this.setState.bind(this));
             
         return [switchService];
