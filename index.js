@@ -5,7 +5,7 @@ module.exports = function(homebridge) {
     Service = homebridge.hap.Service;
     Characteristic = homebridge.hap.Characteristic;
     
-    homebridge.registerAccessory("homebridge-firebaseswitch", "FirebaseSwitch", firebaseSwitch);
+    homebridge.registerAccessory("homebridge-firebaseswitch", "FireSwitch", firebaseSwitch);
 };
 
 class firebaseSwitch {
