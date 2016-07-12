@@ -37,7 +37,7 @@ class fireSwitch {
                 
                 // have to set the path here since it required
                 // variable expansion after authentication
-                if (path_RE.test(this.path) == true) {
+                if (path_RE.test(self.path) == true) {
                     self._db_path = self._db.child(self.path);
                 }
             } else {
