@@ -1,6 +1,6 @@
 {
   "name": "homebridge-fireswitch",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Homebridge Switch Plugin for Firebase",
   "main": "index.js",
   "scripts": {
